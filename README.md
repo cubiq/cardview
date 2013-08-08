@@ -13,4 +13,4 @@ You can watch a screencast here http://youtu.be/zWYNUFuKI5s or play with the fol
 
 [Horizontal](http://lab.cubiq.org/cardview/demos/horizontal/)
 
-[Vertical](http://lab.cubiq.org/cardview/demos/zoom/)
+[Zoom](http://lab.cubiq.org/cardview/demos/zoom/)
