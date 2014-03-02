@@ -385,16 +385,7 @@ CardView.prototype = {
 	},
 
 	_updateContent: function () {
-		var newPage = this.page + this.direction,
-			cardToUpdate = this.direction > 0 ? this.nextCard : this.prevCard;
-
-		if ( newPage < 0 ) {
-			newPage = this.pageCount - 1;
-		} else if ( newPage >= this.pageCount ) {
-			newPage = 0;
-		}
-
-		this.options.onUpdateContent(this.cards[cardToUpdate], this.options.dataset[newPage]);
+		this.options.onUpdateContent(this.cards[this.currCard], this.options.dataset[this.page]);
 
 		this.enable();
 	},
@@ -429,10 +420,10 @@ CardView.prototype = {
 		this.currCard = 0;
 		this.nextCard = 1;
 
-		this.options.onUpdateContent(this.cards[this.currCard], this.options.dataset[n]);
 		this.options.onUpdateContent(this.cards[this.nextCard], this.options.dataset[next]);
 		this.options.onUpdateContent(this.cards[this.prevCard], this.options.dataset[prev]);
-
+		this.options.onUpdateContent(this.cards[this.currCard], this.options.dataset[n]);
+		
 		this._arrangeCards();
 	},
 
